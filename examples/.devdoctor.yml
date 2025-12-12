@@ -1,0 +1,25 @@
+project: example-project
+
+checks:
+  - name: Python version
+    type: command
+    command: "python --version"
+    expect:
+      contains: "3."
+
+  - name: Required env vars
+    type: env
+    required:
+      - PATH
+
+  - name: Current directory exists
+    type: filesystem
+    path: "."
+    expect:
+      non_empty: true
+
+  - name: Localhost SSH port
+    type: tcp
+    host: "localhost"
+    port: 22
+    required: false

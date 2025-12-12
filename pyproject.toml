@@ -1,0 +1,35 @@
+[project]
+name = "dev-doctor"
+version = "0.1.0"
+description = "Healthchecks-as-code for verifying local development environments."
+requires-python = ">=3.9"
+
+dependencies = [
+    "typer >= 0.12.0",        # CLI framework for clean multi-command tooling
+    "PyYAML >= 6.0.0",        # Parse .yml/.yaml project configs
+    "rich >= 13.0.0",         # (Optional) colorful, structured CLI output
+]
+
+# ---------------------------------------------------------------------
+# Optional dependency groups (if you want extras later, like plugins)
+# ---------------------------------------------------------------------
+[project.optional-dependencies]
+dev = [
+    "pytest",                 # testing framework
+    "mypy",                   # static typing checks
+    "ruff",                   # linting / formatting
+]
+
+# ---------------------------------------------------------------------
+# Console script entry point
+# This makes the CLI available as `dev-doctor` on the command line.
+# ---------------------------------------------------------------------
+[project.scripts]
+dev-doctor = "dev_doctor.cli:app"
+
+# ---------------------------------------------------------------------
+# Build backend (recommended modern choice)
+# ---------------------------------------------------------------------
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
