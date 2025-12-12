@@ -1,0 +1,4 @@
+checks:
+  - name: Python version
+    type: command
+    command: "python --version"
