@@ -33,3 +33,8 @@ pip install -e .
 dev-doctor init
 dev-doctor run
 ```
+
+## Future development
+* Cloud environment checks
+* Detailed JSON output
+* Other features based on feedback received
